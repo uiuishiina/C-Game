@@ -13,5 +13,27 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="GameMain">
+      <UniqueIdentifier>{859ba844-4861-4451-a0b4-48a219f8eea8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Entry">
+      <UniqueIdentifier>{60203219-17cb-4022-951c-2fcb0a70caaa}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\GameMain\GameMain.cpp">
+      <Filter>GameMain</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Entry\Entry.cpp">
+      <Filter>Entry</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\GameMain\GameMain.h">
+      <Filter>GameMain</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Entry\MyUtility.h">
+      <Filter>Entry</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
