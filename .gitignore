@@ -39,3 +39,5 @@
 
 # debug information files
 *.dwo
+.vs/C Game/v17/ipch/AutoPCH/6c9913920f3267d7/GAMEMAIN.ipch
+.vs/C Game/v17/ipch/AutoPCH/417b655b2bdefbd/ENTRY.ipch
