@@ -15,8 +15,7 @@
       "RelativeMoniker": "D:0:0:{58B0B34E-1762-4F47-8568-742CA004553D}|C Game\\C Game.vcxproj|solutionrelative:Entry\\MyUtility.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{58B0B34E-1762-4F47-8568-742CA004553D}|C Game\\C Game.vcxproj|D:\\User\\Documents\\C-Game\\Entry\\Entry.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{58B0B34E-1762-4F47-8568-742CA004553D}|C Game\\C Game.vcxproj|solutionrelative:Entry\\Entry.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|\\\\172.22.65.11\\pub-Students$\\T\uFF3F\u897F\u8C37\\C\u002B\u002B\\game\\BOMB\\bomb_main\\bomb_main\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,8 +25,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "main.cpp",
+              "DocumentMoniker": "\\\\172.22.65.11\\pub-Students$\\T\uFF3F\u897F\u8C37\\C\u002B\u002B\\game\\BOMB\\bomb_main\\bomb_main\\main.cpp",
+              "ToolTip": "\\\\172.22.65.11\\pub-Students$\\T\uFF3F\u897F\u8C37\\C\u002B\u002B\\game\\BOMB\\bomb_main\\bomb_main\\main.cpp",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-01-08T06:33:07.538Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -36,7 +46,7 @@
               "RelativeDocumentMoniker": "GameMain\\GameMain.cpp",
               "ToolTip": "D:\\User\\Documents\\C-Game\\GameMain\\GameMain.cpp",
               "RelativeToolTip": "GameMain\\GameMain.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABsAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-01-08T06:23:13.058Z",
               "EditorCaption": ""
@@ -49,22 +59,9 @@
               "RelativeDocumentMoniker": "GameMain\\GameMain.h",
               "ToolTip": "D:\\User\\Documents\\C-Game\\GameMain\\GameMain.h",
               "RelativeToolTip": "GameMain\\GameMain.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAUAAAAAAAAAA==",
+              "ViewState": "AgIAABAAAAAAAAAAAAAawBwAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2026-01-08T06:18:10.822Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Entry.cpp",
-              "DocumentMoniker": "D:\\User\\Documents\\C-Game\\Entry\\Entry.cpp",
-              "RelativeDocumentMoniker": "Entry\\Entry.cpp",
-              "ToolTip": "D:\\User\\Documents\\C-Game\\Entry\\Entry.cpp",
-              "RelativeToolTip": "Entry\\Entry.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-01-08T06:14:46.163Z",
               "EditorCaption": ""
             },
             {
@@ -75,7 +72,7 @@
               "RelativeDocumentMoniker": "Entry\\MyUtility.h",
               "ToolTip": "D:\\User\\Documents\\C-Game\\Entry\\MyUtility.h",
               "RelativeToolTip": "Entry\\MyUtility.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2026-01-08T06:12:08.972Z",
               "EditorCaption": ""

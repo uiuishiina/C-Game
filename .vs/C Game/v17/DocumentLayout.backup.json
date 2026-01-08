@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "D:\\User\\Documents\\C-Game\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{58B0B34E-1762-4F47-8568-742CA004553D}|C Game.vcxproj|D:\\User\\Documents\\C-Game\\Entry\\Utility.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{58B0B34E-1762-4F47-8568-742CA004553D}|C Game.vcxproj|solutionrelative:Entry\\Utility.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{58B0B34E-1762-4F47-8568-742CA004553D}|C Game\\C Game.vcxproj|D:\\User\\Documents\\C-Game\\GameMain\\GameMain.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{58B0B34E-1762-4F47-8568-742CA004553D}|C Game\\C Game.vcxproj|solutionrelative:GameMain\\GameMain.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{58B0B34E-1762-4F47-8568-742CA004553D}|C Game.vcxproj|D:\\User\\Documents\\C-Game\\Entry\\Entry.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{58B0B34E-1762-4F47-8568-742CA004553D}|C Game.vcxproj|solutionrelative:Entry\\Entry.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{58B0B34E-1762-4F47-8568-742CA004553D}|C Game\\C Game.vcxproj|D:\\User\\Documents\\C-Game\\GameMain\\GameMain.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{58B0B34E-1762-4F47-8568-742CA004553D}|C Game\\C Game.vcxproj|solutionrelative:GameMain\\GameMain.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{58B0B34E-1762-4F47-8568-742CA004553D}|C Game\\C Game.vcxproj|D:\\User\\Documents\\C-Game\\Entry\\MyUtility.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{58B0B34E-1762-4F47-8568-742CA004553D}|C Game\\C Game.vcxproj|solutionrelative:Entry\\MyUtility.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{58B0B34E-1762-4F47-8568-742CA004553D}|C Game\\C Game.vcxproj|D:\\User\\Documents\\C-Game\\Entry\\Entry.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{58B0B34E-1762-4F47-8568-742CA004553D}|C Game\\C Game.vcxproj|solutionrelative:Entry\\Entry.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,27 +31,53 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Utility.h",
-              "DocumentMoniker": "D:\\User\\Documents\\C-Game\\Entry\\Utility.h",
-              "RelativeDocumentMoniker": "Entry\\Utility.h",
-              "ToolTip": "D:\\User\\Documents\\C-Game\\Entry\\Utility.h",
-              "RelativeToolTip": "Entry\\Utility.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-01-08T06:12:08.972Z",
+              "Title": "GameMain.cpp",
+              "DocumentMoniker": "D:\\User\\Documents\\C-Game\\GameMain\\GameMain.cpp",
+              "RelativeDocumentMoniker": "GameMain\\GameMain.cpp",
+              "ToolTip": "D:\\User\\Documents\\C-Game\\GameMain\\GameMain.cpp",
+              "RelativeToolTip": "GameMain\\GameMain.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-01-08T06:23:13.058Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "GameMain.h",
+              "DocumentMoniker": "D:\\User\\Documents\\C-Game\\GameMain\\GameMain.h",
+              "RelativeDocumentMoniker": "GameMain\\GameMain.h",
+              "ToolTip": "D:\\User\\Documents\\C-Game\\GameMain\\GameMain.h",
+              "RelativeToolTip": "GameMain\\GameMain.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-01-08T06:18:10.822Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Entry.cpp",
               "DocumentMoniker": "D:\\User\\Documents\\C-Game\\Entry\\Entry.cpp",
               "RelativeDocumentMoniker": "Entry\\Entry.cpp",
               "ToolTip": "D:\\User\\Documents\\C-Game\\Entry\\Entry.cpp",
               "RelativeToolTip": "Entry\\Entry.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-01-08T06:11:32.364Z",
+              "WhenOpened": "2026-01-08T06:14:46.163Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MyUtility.h",
+              "DocumentMoniker": "D:\\User\\Documents\\C-Game\\Entry\\MyUtility.h",
+              "RelativeDocumentMoniker": "Entry\\MyUtility.h",
+              "ToolTip": "D:\\User\\Documents\\C-Game\\Entry\\MyUtility.h",
+              "RelativeToolTip": "Entry\\MyUtility.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-01-08T06:12:08.972Z",
               "EditorCaption": ""
             }
           ]
