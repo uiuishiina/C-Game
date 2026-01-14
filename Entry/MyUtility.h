@@ -16,11 +16,11 @@ namespace BombGame {
 	static int FieldSize = 6;
 
 	//@brief	---  爆弾の数  ---
-	static int BombCount = 10;
+	static int BombCount = 6;
 
 	//@brief	---  入力変数  ---
-	//@param	W A S D
-	enum InputArrow { Up, Left, Down, Right };
+	//@param	W A S D として使用
+	enum InputArrow { Up = 1, Left, Down, Right };
 
 	//@brief	---  リザルト変数  ---
 	//@param	Clear  HitBomb  DropField  Error
@@ -28,5 +28,5 @@ namespace BombGame {
 
 	//@brief	---  判定変数  ---
 	//@param	Live  Death  Fall  Exception
-	enum Judge { Live, Death, Fall, Exception = -1 };
+	enum Judge { Live, Death, Fall, Goal, Exception = -1 };
 }

@@ -14,9 +14,19 @@
 		//入力処理
 		const auto Input = InputPlayer();
 		//判定処理
-		if (GameJudgement(Input)) {
-			
+		switch (GameJudgement(Input)){
+		case BombGame::Live:
+				break;
+		case BombGame::Death:
+			return BombGame::HitBomb;
+				break;
+		case BombGame::Fall:
+			return BombGame::DropField;
+		case BombGame::Goal:
+			return BombGame::Clear;
+				break;
 		}
+		ShowField();
 	}
 }
 
@@ -24,7 +34,40 @@
 //@param	input	入力値
 [[nodiscard]] BombGame::Judge Game::GameJudgement(BombGame::InputArrow const input)noexcept
 {
+	switch (input)
+	{
+	case BombGame::Up:
+		PlayerPos_.first -= 1;
+		break;
+	case BombGame::Left:
+		PlayerPos_.second -= 1;
+		break;
+	case BombGame::Down:
+		PlayerPos_.first += 1;
+		break;
+	case BombGame::Right:
+		PlayerPos_.second += 1;
+		break;
+	}
+	std::cout << PlayerPos_.first << " " << PlayerPos_.second << "\n";
 
+	//落下判定
+	if (PlayerPos_.first < 0 || PlayerPos_.first >= Fieldsize_) {
+		return BombGame::Fall;
+	}
+	if (PlayerPos_.second < 0 || PlayerPos_.second >= Fieldsize_) {
+		return BombGame::Fall;
+	}
+
+	//爆弾で死亡
+	if (Field_.at(PlayerPos_.first).at(PlayerPos_.second).second) {
+		return BombGame::Death;
+	}
+
+	//ゴール
+	if (PlayerPos_.first == Fieldsize_ - 1 && PlayerPos_.second == Fieldsize_ - 1) {
+		return BombGame::Goal;
+	}
 
 	return BombGame::Live;
 }
@@ -35,20 +78,27 @@
 [[nodiscard]] bool Game :: CreateField(const int size,const int Bomb)noexcept {
 	
 	//フィールド配列初期化
-	Field_.clear();
-	Field_.resize(size * size);
-	std::fill(Field_.begin(), Field_.end(), std::pair<bool, bool>(false, false));
+	std::vector<std::vector<std::pair<bool, bool>>> a(size, std::vector<std::pair<bool, bool>>(size, std::pair<bool, bool>(false, false)));
 
+	//Field_ = (size, std::vector<std::pair<bool, bool>>(size),(false,false));
+	
 	//重複を避けるため配列から数値を取得
-	std::vector<int> v = {};
-	for (int i = 1; i < (size * size) - 1; i++) { v.push_back(i); }
-	auto v_t = (int)v.size();
-
+	std::vector<std::vector<bool>> v(size, std::vector<bool>());
+	for (int i = 0; i < size; i++) {
+		for (int j = 0; j < size; j++) {
+			v.at(i).push_back(false);
+		}
+	}
+	auto v_t1 = (int)v.size();
+	auto v_t2 = (int)v.at(0).size();
+	//爆弾作成
 	for (int i = 0; i < Bomb; i++) {
-		if (v_t == 0) { break; }
-		Field_.at(RandomInt(&v_t, v)).second = true;
+		if (v_t1 == 0) { break; }
+		auto pos = RandomInt(&v_t1, &v_t2, v);
+		a.at(pos.first).at(pos.second).second = true;
 	}
 
+	Field_ = a;
 	//フィールドサイズ設定
 	Fieldsize_ = size;
 	return true;
@@ -61,54 +111,82 @@ void Game :: ShowField(bool Debug) noexcept {
 	assert(Fieldsize_ != 0 && "フィールドサイズ0");
 
 	//表示
-	for (int i = 1; i < Fieldsize_ * Fieldsize_; i++) {
-		std::cout << " ";
-
-		if (PlayerPos_ == i) {
-			std::cout << "@";
-		}
-		else {
-			//スタート位置
-			if (i == 1) {
-				std::cout << "S";	continue;
+	for (int i = 0; i < Fieldsize_; i++) {
+		for (int j = 0; j < Fieldsize_; j++) {
+			std::cout << " ";
+			if (PlayerPos_.first == i && PlayerPos_.second == j) {
+				std::cout << "@";
 			}
-			//Debug ON OFF
-			switch (Debug)
-			{
-			case true:	//Debug ON
-				if (Field_.at(i).second) {
-					std::cout << "+";
+			else if (i == Fieldsize_-1 && j == Fieldsize_-1) {
+				std::cout << "G";
+			}
+			else {
+				//スタート位置
+				if (i == 0 && j == 0) {
+					std::cout << "S";	continue;
 				}
-				else {
-					std::cout << "-";
+				//Debug ON OFF
+				switch (Debug)
+				{
+				case true:	//Debug ON
+					if (Field_.at(i).at(j).second) {
+						std::cout << "+";
+					}
+					else {
+						std::cout << "-";
+					}
+					break;
+				case false://Debug OFF
+					if (Field_.at(i).at(j).first) {
+						std::cout << "*";
+					}
+					else {
+						std::cout << "-";
+					}
+					break;
 				}
-				break;
-			case false://Debug OFF
-				if (Field_.at(i).first) {
-					std::cout << "*";
-				}
-				else {
-					std::cout << "-";
-				}
-				break;
 			}
 		}
-
-		//改行
-		if (i != 1 && i % Fieldsize_ == 0) { 
-			std::cout << std::endl; }
+		std::cout << std::endl;
 	}
-	std::cout << " G";
 }
 
 //@brief	---  プレイヤー入力受付関数  /・・入力待機した後入力された値を返す関数・・/  ---
-[[nodiscaard]] BombGame::InputArrow Game::InputPlayer()noexcept {
-	
-	//
-	BombGame::InputArrow Input;
-	
+[[nodiscaard]] BombGame::InputArrow Game::InputPlayer() {
 
-	return BombGame::Up;
+	int num = 0;
+	while (true) {
+		std::cout << "\nどの方向へ移動しますか?　１= 上 ,2 = 左 ,3 = 下 ,4 = 右" << std::endl;
+		//例外がないか
+		try {
+			std::cin >> num;
+		}
+		catch (...) {
+			std::cout << "数値以外が入力されました" << std::endl;
+			std::cin.clear();
+			std::cin.seekg(0);
+			continue;
+		}
+		//列挙型の範囲か
+		try {
+			CheckInput(num);
+		}
+		catch (const char* pLog) {
+			std::cout << "指定された範囲外の数値が入力されました。" << pLog << std::endl;
+			std::cin.clear();
+			std::cin.seekg(0);
+			continue;
+		}
+		break;
+	}
+	return (BombGame::InputArrow)num;
+}
+
+//@brief	---  入力例外処理関数  /・・入力が例外ではないか調査する関数・・/  ---
+void Game :: CheckInput(int num) {
+	if (num > 4) { throw "入力された数値が５以上です。入力する数値は４以下にしてください"; }
+	if (num < 1) { throw "入力された数値が1以下です。入力する数値は１以上の整数値にしてください"; }
+	std::cout << "入力された値は" << num << " です。\n";
 }
 
 //@brief	---  リザルト関数  /・・ゲーム終了処理関数・・/  ---

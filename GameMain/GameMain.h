@@ -18,6 +18,8 @@ public:
 
 		//ランダム初期化
 		srand((unsigned)time(NULL));
+		//cin例外処理有効化
+		std::cin.exceptions(std::ios::failbit);
 
 		//フィールド作成
 		if (!CreateField()) {
@@ -28,7 +30,7 @@ public:
 		ShowField(true);
 
 		//ループから抜けたときリザルト
-		//Result(GameLoop());
+		Result(GameLoop());
 	};//End Game
 
 private:
@@ -41,24 +43,32 @@ private:
 	[[nodiscard]] BombGame::Judge GameJudgement(BombGame::InputArrow const input)noexcept;
 
 	//@brief	---  フィールド作成関数  /・・ゲームフィールドを任意のサイズで作成する関数・・/  ---
-	//@param	size	フィールド幅 Default = BombGame::FieldSize
-	//@param	Bomb	爆弾の数	Default = BombGame::BombCount
+	//@param	size	フィールド幅 Default = BombGame :: FieldSize
+	//@param	Bomb	爆弾の数	Default = BombGame :: BombCount
 	[[nodiscard]] bool CreateField(const int size = BombGame::FieldSize, const int Bomb = BombGame::BombCount)noexcept;
 
 	//@brief	---  ランダム関数  ---
-	[[nodiscard]] int RandomInt(int* value,std::vector<int>& v) noexcept {
-		auto a = rand() % *value;
-		int x = v.at(a);
-		v.erase(v.begin() + a);
-		--*value;
-		return x;
+	[[nodiscard]] std::pair<int, int> RandomInt(int* value1, int* value2, std::vector<std::vector<bool>>& v) noexcept {
+		int a, b;
+		while (1) {
+			a = rand() % *value1;
+			b = rand() % *value2;
+			if (!v.at(a).at(b)) {
+				v.at(a).at(b) = true;
+				break;
+			}
+		}
+		return std::pair<int, int>(a, b);
 	}
 
 	//@brief	---  フィールド表示関数  ---
 	void ShowField(bool Debug = false)noexcept;
 
 	//@brief	---  プレイヤー入力受付関数  /・・入力待機した後入力された値を返す関数・・/  ---
-	[[nodiscard]] BombGame::InputArrow InputPlayer()noexcept;
+	[[nodiscard]] BombGame::InputArrow InputPlayer();
+
+	//@brief	---  入力例外処理関数  /・・入力が例外ではないか調査する関数・・/  ---
+	void CheckInput(int num);
 
 	//@brief	---  リザルト関数  /・・ゲーム終了処理関数・・/  ---
 	void Result(BombGame::Result result)noexcept;
@@ -66,7 +76,7 @@ private:
 
 private:
 	//------  クラス変数  ------
-	std::vector<std::pair<bool, bool>> Field_{};	//フィールド	@param 可視性　爆弾の可否
+	std::vector < std::vector<std::pair<bool, bool>>> Field_{};	//フィールド	@param 可視性　爆弾の可否
 	int Fieldsize_ = 0;		//フィールドサイズ
-	int PlayerPos_ = 1;
+	std::pair<int,int> PlayerPos_ = { 0,0 };
 };

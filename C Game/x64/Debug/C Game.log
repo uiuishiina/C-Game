@@ -1,6 +1,3 @@
-﻿  Entry.cpp
-  GameMain.cpp
-B:\Visual Studio\BombGame\GameMain\GameMain.cpp(105,1): warning C5030: 属性 [[nodiscaard]] は認識されません
-B:\Visual Studio\BombGame\GameMain\GameMain.cpp(108,23): warning C4101: 'Input': ローカル変数は 1 度も使われていません。
-  コードを生成中...
-  C Game.vcxproj -> B:\Visual Studio\BombGame\x64\Debug\C Game.exe
+﻿  GameMain.cpp
+C:\Users\shiin\source\C-Game\BombGame\GameMain\GameMain.cpp(155,1): warning C5030: 属性 [[nodiscaard]] は認識されません
+  C Game.vcxproj -> C:\Users\shiin\source\C-Game\BombGame\x64\Debug\C Game.exe
