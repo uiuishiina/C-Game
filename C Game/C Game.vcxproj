@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClCompile Include="..\Entry\Entry.cpp" />
     <ClCompile Include="..\GameMain\GameMain.cpp" />
+    <ClCompile Include="..\GameMain\GameMain.PlayerInput.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Entry\MyUtility.h" />

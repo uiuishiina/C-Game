@@ -3,4 +3,15 @@
 
 #pragma once
 #include<iostream>
+#include <iomanip>
+#include<vector>
+#include<random>
+#include<time.h>
+#include<cassert>
 
+namespace CradSet {
+	//@brief	---  スート  ---
+	enum Suit {
+		Spade, Heart, Diamond, Club
+	};
+}
