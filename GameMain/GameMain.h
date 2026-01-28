@@ -26,11 +26,14 @@ private://------  関数  ------
 	//@brief	---  表示関数  ---
 	void Show(const bool Debug = false)noexcept;
 
-	//@brief	---  ランダムドロー関数  ---
-	[[nodiscard]] std::pair<int, CradSet::Suit> Drow(std::vector<std::pair<int, CradSet::Suit>>& V)noexcept;
+	//@brief	---  ドロー関数  ---
+	void Drow(std::vector<std::pair<int, CradSet::Suit>>& Deck_)noexcept;
+
+	//@brief	---  ランダム関数  ---
+	[[nodiscard]] std::pair<int, CradSet::Suit> RamdomDrow(std::vector<std::pair<int, CradSet::Suit>>& V)noexcept;
 
 	//@brief	---  プレイヤー入力関数  ---
-	void PlayerInput()noexcept;
+	[[nodiscard]] CradSet::Input PlayerInput()noexcept;
 
 	//@brief	---  CIN例外処理関数  ---
 	void ThrowCIN(int num) {
@@ -42,13 +45,24 @@ private://------  関数  ------
 		if (value.first < 0 || value.first >= Field_.size()) {
 			throw "Plese check Input value(first)";
 		}
-		if (value.second <= 0 || value.second >= Field_.size()) {
+		if (value.second <= 0 || value.second >= SetSort_.size()) {
 			throw "Plese check Input value(second)";
 		}
+		if (value.first == value.second) {
+			throw "Same value.";
+		}
 	}
+	
+	//@brief	---  カードセレクト関数  ---
+	[[nodiscard]] std::pair<int, int> Cardselection()noexcept;
+
+	//@brief	---  カード移動関数  ---
+	void CradMove(std::pair<int, int> value)noexcept;
 	
 private://------  変数  ------
 	std::vector<std::vector<std::pair<int, CradSet::Suit>>>	AllCrad_;	//全カード
 	std::vector<std::pair<int, CradSet::Suit>>				Deck_;		//デッキ
 	std::vector<std::vector<std::pair<int, CradSet::Suit>>> Field_;		//フィールド
+	std::vector<std::vector<std::pair<int, CradSet::Suit>>> SetSort_;	//置き場
+	std::pair<int, CradSet::Suit>							DeckFirst_;
 };

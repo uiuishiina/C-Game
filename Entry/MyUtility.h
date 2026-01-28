@@ -14,4 +14,8 @@ namespace CradSet {
 	enum Suit {
 		Spade, Heart, Diamond, Club
 	};
+	//@brief	---  入力  ---
+	enum Input {
+		END, Draw, Move,
+	};
 }
