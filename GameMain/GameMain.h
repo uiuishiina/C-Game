@@ -37,19 +37,16 @@ private://------  関数  ------
 
 	//@brief	---  CIN例外処理関数  ---
 	void ThrowCIN(int num) {
-		if (num < 0 || num >= 3) {
+		if (num < -1 || num >= 3) {
 			throw "Plese check Input value";
 		}
 	}
 	void ThrowCIN(std::pair<int,int> value) {
-		if (value.first < 0 || value.first >= Field_.size()) {
+		if (value.first < 0 || value.first > Field_.size()) {
 			throw "Plese check Input value(first)";
 		}
-		if (value.second <= 0 || value.second >= SetSort_.size()) {
+		if (value.second <= 0 || value.second > SetSort_.size()) {
 			throw "Plese check Input value(second)";
-		}
-		if (value.first == value.second) {
-			throw "Same value.";
 		}
 	}
 	
@@ -58,6 +55,9 @@ private://------  関数  ------
 
 	//@brief	---  カード移動関数  ---
 	void CradMove(std::pair<int, int> value)noexcept;
+
+	//@brief	---  check関数  ---
+	[[nodiscard]] bool Check()const noexcept;
 	
 private://------  変数  ------
 	std::vector<std::vector<std::pair<int, CradSet::Suit>>>	AllCrad_;	//全カード

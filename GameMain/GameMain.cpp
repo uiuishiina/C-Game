@@ -16,7 +16,7 @@ void Game::EntryGame() {
 
 	Initialization();
 	Shuffle(Deck_);
-	Show();
+	Show(1);
 
 	while (1) {
 		switch (PlayerInput())
@@ -28,14 +28,19 @@ void Game::EntryGame() {
 			CradMove(Cardselection());
 			break;
 		case CradSet::Input::END:
-			break;
+			std::cout << "ゲーム終了";
+			return;
 		default:
 			std::cout << "れいがい";
 			break;
 		}
-		Show();
+		Show(true);
+		if (Check()) {
+			break;
+		}
 	}
 
+	std::cout << "ゲーム終了";
 }
 
 //@brief	---  初期化関数  ---
@@ -61,16 +66,18 @@ void Game::EntryGame() {
 		}
 	}
 
+	auto vvv = 4;
 	//フィールドセット
 	for (int i = 0; i < 7; i++) {
 		for (int j = 0; j < i+2; j++) {
 			int ans;
 			while (true) {
-				auto a = rand() % 4;
-				if (0 != AllCrad_.at(a).size()) {
-					ans = a;
-					break;
+				auto a = rand() % vvv;
+				if (0 == AllCrad_.at(a).size()) {
+					continue;
 				}
+				ans = a;
+				break;
 			}
 			Field_.at(i).push_back(RamdomDrow(AllCrad_.at(ans)));
 		}
@@ -161,11 +168,16 @@ void Game :: Show(const bool Debug)noexcept {
 	}
 	//デッキの上表示
 	std::cout << "\nデッキ\n";
-	if ((int)Deck_.front().second & 1) {
+	switch ((int)Deck_.front().second & 1)
+	{
+	case 0:
 		std::cout << "\033[1;37m";
-	}
-	else {
+		break;
+	case 1:
 		std::cout << "\033[1;31m";
+		break;
+	default:
+		break;
 	}
 	std::cout << std::setw(4) << Deck_.at(0).first << "\033[m";
 
@@ -205,10 +217,31 @@ void Game :: Drow(std::vector<std::pair<int, CradSet::Suit>>& Deck_)noexcept {
 //@brief	---  ランダム関数  ---
 [[nodiscard]] std::pair<int, CradSet::Suit> Game :: RamdomDrow(std::vector<std::pair<int, CradSet::Suit>>& V)noexcept {
 	//長さに応じてランダムにとる
-	const auto value = rand() % V.size();
-	//取得して消去
-	auto v = V.at(value);
-	V.erase(V.begin() + value);
+	std::pair<int, CradSet::Suit> ans;
+	int count = 0;
+	while (true) {
+		const auto value = rand() % V.size();
+		//取得して消去
+		ans = V.at(value);
+		if (count < 10) {
+			if (ans.first < 6
+				) {
+				count++;
+				continue;
+			}
+		}
+		V.erase(V.begin() + value);
+		break;
+	}
+	return ans;
+}
 
-	return v;
+//@brief	---  check関数  ---
+[[nodiscard]] bool Game :: Check()const noexcept {
+	
+		for (auto& v : Field_) {
+			if (v.size() > 1) { return false; }
+			if (v.front().first != 0) { return false; }
+		}
+		return true;
 }

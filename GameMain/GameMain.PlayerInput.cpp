@@ -1,27 +1,27 @@
-//------  GameMain.PlayerINput.h  /EEƒQ[ƒ€ƒƒCƒ““ü—ÍŠÖ”ƒtƒ@ƒCƒ‹EE/  ------
+ï»¿//------  GameMain.PlayerINput.h  /ãƒ»ãƒ»ã‚²ãƒ¼ãƒ ãƒ¡ã‚¤ãƒ³å…¥åŠ›é–¢æ•°ãƒ•ã‚¡ã‚¤ãƒ«ãƒ»ãƒ»/  ------
 
 #pragma once
 
-//------  QÆ  ------
+//------  å‚ç…§  ------
 #include"GameMain.h"
 
-//@brief	---  ƒvƒŒƒCƒ„[“ü—ÍŠÖ”  ---
+//@brief	---  ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼å…¥åŠ›é–¢æ•°  ---
 [[nodiscard]] CradSet::Input Game::PlayerInput()noexcept {
 	int Doing_;
-	//“®ìw’è‰ÓŠ
+	//å‹•ä½œæŒ‡å®šç®‡æ‰€
 	while (true) {
-		std::cout << "\n“®ì‚ğw’è@‚P= ƒfƒbƒLƒhƒ[ ,2 = ƒJ[ƒhˆÚ“® ,000 = I—¹" << std::endl;
-		//—áŠO‚ª‚È‚¢‚©
+		std::cout << "\nå‹•ä½œã‚’æŒ‡å®šã€€ï¼‘= ãƒ‡ãƒƒã‚­ãƒ‰ãƒ­ãƒ¼ ,2 = ã‚«ãƒ¼ãƒ‰ç§»å‹• ,-1 = çµ‚äº†" << std::endl;
+		//ä¾‹å¤–ãŒãªã„ã‹
 		try {
 			std::cin >> Doing_;
 		}
 		catch (...) {
-			std::cout << "”’lˆÈŠO‚ª“ü—Í‚³‚ê‚Ü‚µ‚½" << std::endl;
+			std::cout << "æ•°å€¤ä»¥å¤–ãŒå…¥åŠ›ã•ã‚Œã¾ã—ãŸ" << std::endl;
 			std::cin.clear();
 			std::cin.seekg(0);
 			continue;
 		}
-		//—áŠOˆ—
+		//ä¾‹å¤–å‡¦ç†
 		try {
 			ThrowCIN(Doing_);
 		}
@@ -35,37 +35,37 @@
 
 	return (CradSet::Input)Doing_;
 }
-//@brief	---  ƒJ[ƒhƒZƒŒƒNƒgŠÖ”  ---
+//@brief	---  ã‚«ãƒ¼ãƒ‰ã‚»ãƒ¬ã‚¯ãƒˆé–¢æ•°  ---
 [[nodiscard]] std::pair<int, int> Game :: Cardselection()noexcept {
 	int F, S;
 	std::pair<int, int> value = {};
-	//ƒZƒŒƒNƒg
+	//ã‚»ãƒ¬ã‚¯ãƒˆ
 	while (true) {
-		std::cout << "\nˆÚ“®‚·‚éƒJ[ƒh‚ğw’è" << std::endl;
-		//ƒJ[ƒhw’è‰ÓŠ
+		std::cout << "\nç§»å‹•ã™ã‚‹ã‚«ãƒ¼ãƒ‰ã‚’æŒ‡å®š" << std::endl;
+		//ã‚«ãƒ¼ãƒ‰æŒ‡å®šç®‡æ‰€
 		while (true) {
-			std::cout << "\n‚Ç‚ÌƒJ[ƒh‚ğˆÚ“®‚µ‚Ü‚·‚©	0 = ƒfƒbƒL ,1`7 = ƒtƒB[ƒ‹ƒh”Ô†" << std::endl;
-			//—áŠO‚ª‚È‚¢‚©
+			std::cout << "\nã©ã®ã‚«ãƒ¼ãƒ‰ã‚’ç§»å‹•ã—ã¾ã™ã‹	0 = ãƒ‡ãƒƒã‚­ ,1ï½7 = ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ç•ªå·" << std::endl;
+			//ä¾‹å¤–ãŒãªã„ã‹
 			try {
 				std::cin >> F;
 			}
 			catch (...) {
-				std::cout << "”’lˆÈŠO‚ª“ü—Í‚³‚ê‚Ü‚µ‚½" << std::endl;
+				std::cout << "æ•°å€¤ä»¥å¤–ãŒå…¥åŠ›ã•ã‚Œã¾ã—ãŸ" << std::endl;
 				std::cin.clear();
 				std::cin.seekg(0);
 				continue;
 			}
 			break;
 		}
-		//ˆÚ“®êŠw’è‰ÓŠ
+		//ç§»å‹•å ´æ‰€æŒ‡å®šç®‡æ‰€
 		while (true) {
-			std::cout << "\n‚Ç‚±‚ÉˆÚ“®‚µ‚Ü‚·‚©	1`‚S = ’u‚«ê" << std::endl;
-			//—áŠO‚ª‚È‚¢‚©
+			std::cout << "\nã©ã“ã«ç§»å‹•ã—ã¾ã™ã‹	1ï½ï¼” = ç½®ãå ´" << std::endl;
+			//ä¾‹å¤–ãŒãªã„ã‹
 			try {
 				std::cin >> S;
 			}
 			catch (...) {
-				std::cout << "”’lˆÈŠO‚ª“ü—Í‚³‚ê‚Ü‚µ‚½" << std::endl;
+				std::cout << "æ•°å€¤ä»¥å¤–ãŒå…¥åŠ›ã•ã‚Œã¾ã—ãŸ" << std::endl;
 				std::cin.clear();
 				std::cin.seekg(0);
 				continue;
@@ -73,7 +73,7 @@
 			break;
 		}
 		value = { F,S };
-		//—áŠOˆ—
+		//ä¾‹å¤–å‡¦ç†
 		try {
 			ThrowCIN(value);
 		}
@@ -88,8 +88,8 @@
 	return value;
 }
 
-//@brief	---  ƒJ[ƒhˆÚ“®ŠÖ”  ---
-//@param	ˆÚ“®‚·‚éî•ñ
+//@brief	---  ã‚«ãƒ¼ãƒ‰ç§»å‹•é–¢æ•°  ---
+//@param	ç§»å‹•ã™ã‚‹æƒ…å ±
 void Game :: CradMove(std::pair<int, int> value)noexcept {
 
 	if (Field_.size() < value.first) {
@@ -100,7 +100,7 @@ void Game :: CradMove(std::pair<int, int> value)noexcept {
 		std::cout << "value.second";
 		return;
 	}
-	//ƒ`ƒFƒbƒN
+	//ãƒã‚§ãƒƒã‚¯
 	{
 		std::pair<int, CradSet::Suit> v;
 		if (value.first == 0) {
@@ -109,27 +109,30 @@ void Game :: CradMove(std::pair<int, int> value)noexcept {
 		else {
 			v = Field_.at(value.first - 1).back();
 		}
-		//Fƒ`ƒFƒbƒN
-		if ((SetSort_.at(value.second - 1).back().second & 1) == (v.second & 1)) {
-			std::cout << "------  ƒK[ƒh‚ÌF‚ª“¯‚¶‚Å‚·  ------\n";
+		//è‰²ãƒã‚§ãƒƒã‚¯
+		if (((int)SetSort_.at(value.second - 1).back().second & 1) == ((int)v.second & 1)) {
+			std::cout << "------  ã‚¬ãƒ¼ãƒ‰ã®è‰²ãŒåŒã˜ã§ã™  ------\n";
 			return;
 		}
-		//”šƒ`ƒFƒbƒN
+		//æ•°å­—ãƒã‚§ãƒƒã‚¯
 		if ((SetSort_.at(value.second - 1).back().first + 1) != v.first) {
-			std::cout << "------  ƒJ[ƒh‚Ì”š‚ªƒ‹[ƒ‹‚Éˆá”½‚µ‚Ä‚¢‚Ü‚·  ------\n";
+			std::cout << "------  ã‚«ãƒ¼ãƒ‰ã®æ•°å­—ãŒãƒ«ãƒ¼ãƒ«ã«é•åã—ã¦ã„ã¾ã™  ------\n";
 			return;
 		}
 	}
-	//ˆÚ“®
+	//ç§»å‹•
 	{
 		std::pair<int, CradSet::Suit> pair_;
 		if (value.first == 0) {
 			pair_ = Deck_.front();
-			Deck_.pop_back();
+			Deck_.erase(Deck_.begin());
 		}
 		else {
 			pair_ = Field_.at(value.first - 1).back();
 			Field_.at(value.first - 1).pop_back();
+			if (!Field_.at(value.first - 1).size()) {
+				Field_.at(value.first - 1).push_back(std::pair<int, CradSet::Suit>(0, CradSet::Spade));
+			}
 		}
 		SetSort_.at(value.second - 1).push_back(pair_);
 	}

@@ -16,6 +16,6 @@ namespace CradSet {
 	};
 	//@brief	---  入力  ---
 	enum Input {
-		END, Draw, Move,
+		END = -1, Draw = 1, Move,
 	};
 }
